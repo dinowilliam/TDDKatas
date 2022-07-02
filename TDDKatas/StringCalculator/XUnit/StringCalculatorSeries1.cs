@@ -4,12 +4,11 @@
         public object Add(string numbers) {
             Int32 value = 0;
 
-            var splitNumbers = numbers.Split(",");
+            var splitNumbers = numbers.Split(",").Where(value => !String.IsNullOrWhiteSpace(value)).ToArray();
 
             if (splitNumbers.Any() && splitNumbers.Length > 0) {
 
-                foreach (var number in splitNumbers) { 
-                    if(!String.IsNullOrWhiteSpace(number))
+                foreach (var number in splitNumbers) {                     
                         value += Convert.ToInt32(number);
                 }
 
