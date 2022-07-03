@@ -40,5 +40,20 @@ namespace TDDKatasXUnitTests {
             //Assert
             result.Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("3", 3)]
+        [InlineData("1\n2,3", 6)]
+        [InlineData("10\n20,30\n40,50", 150)]
+        public void Add_AddNumbersUsingNewLineDelimiter_WhenStringIsValid(string calculation, int expected) {
+            //Arrange
+            var sut = new StringCalculatorSeries1();
+
+            //Act
+            var result = sut.Add(calculation);
+
+            //Assert
+            result.Should().Be(expected);
+        }
     }
 }
