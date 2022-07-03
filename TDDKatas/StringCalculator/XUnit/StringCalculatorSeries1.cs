@@ -4,7 +4,7 @@
         public object Add(string numbers) {
             Int32 value = 0;
 
-            var splitNumbers = numbers.Split(",").Where(value => !String.IsNullOrWhiteSpace(value)).ToArray();
+            var splitNumbers = numbers.Split(",", StringSplitOptions.RemoveEmptyEntries);
 
             if (splitNumbers.Any() && splitNumbers.Length > 0) {
 
