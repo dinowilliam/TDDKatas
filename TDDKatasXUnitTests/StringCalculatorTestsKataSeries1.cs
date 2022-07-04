@@ -1,5 +1,5 @@
 using FluentAssertions;
-using TDDKatas.StringCalculator.XUnit;
+using TDDKatas.StringCalculator.XUnit.Series1;
 using Xunit;
 
 namespace TDDKatasXUnitTests {
