@@ -55,5 +55,19 @@ namespace TDDKatasXUnitTests {
             //Assert
             result.Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//;\n1;2;4", 7)]        
+        public void Add_AddNumbersUsingCustomDelimiter_WhenStringIsValid(string calculation, int expected) {
+            //Arrange
+            var sut = new StringCalculatorSeries1();
+
+            //Act
+            var result = sut.Add(calculation);
+
+            //Assert
+            result.Should().Be(expected);
+        }
     }
 }
